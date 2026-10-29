@@ -9,12 +9,23 @@ export type ModeStats = {
   streak: number
   maxStreak: number
   lastDate: string | null
+  lastWon: boolean | null
 }
+
+export type DayResult = "won" | "lost"
 
 export type StatsBook = Record<LetterLength, ModeStats>
 
 function empty(): ModeStats {
-  return { played: 0, wins: 0, streak: 0, maxStreak: 0, lastDate: null }
+  return { played: 0, wins: 0, streak: 0, maxStreak: 0, lastDate: null, lastWon: null }
+}
+
+export function resultOn(row: ModeStats, date: string): DayResult | null {
+  if (row.lastDate !== date) return null
+  if (row.lastWon === true) return "won"
+  if (row.lastWon === false) return "lost"
+  if (row.played === 0) return null
+  return row.streak > 0 ? "won" : "lost"
 }
 
 function emptyBook(): StatsBook {
@@ -37,6 +48,7 @@ export function readStats(): StatsBook {
         streak: Number(row.streak) || 0,
         maxStreak: Number(row.maxStreak) || 0,
         lastDate: typeof row.lastDate === "string" ? row.lastDate : null,
+        lastWon: typeof row.lastWon === "boolean" ? row.lastWon : null,
       }
     }
     return book
@@ -58,6 +70,7 @@ export function recordResult(harf: LetterLength, date: string, won: boolean): St
     streak,
     maxStreak: Math.max(row.maxStreak, streak),
     lastDate: date,
+    lastWon: won,
   }
   window.localStorage.setItem(KEY, JSON.stringify(book))
   return book

@@ -5,7 +5,7 @@ export default function NotFound() {
         <p className="kicker">Kelime5678</p>
         <h1>Sayfa yok</h1>
         <p>Bu adres bir oyun masasına çıkmıyor.</p>
-        <a href="/">Panele dön</a>
+        <a href="/">Ana ekrana dön</a>
       </div>
     </div>
   )

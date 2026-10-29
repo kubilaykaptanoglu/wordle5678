@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 
 import { fontClass } from "@/app/fonts"
+import { HomeLink } from "@/components/home-link"
 import { siteUrl } from "@/lib/site"
 
 import "./globals.css"
@@ -62,7 +63,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <a className="skip" href="#icerik">
           İçeriğe geç
         </a>
-        <div id="icerik">{children}</div>
+        <div id="icerik">
+          <HomeLink />
+          {children}
+        </div>
         <footer className="site-foot">
           <div className="inner">
             <span className="foot-note">{"<3 M için geliştirildi"}</span>

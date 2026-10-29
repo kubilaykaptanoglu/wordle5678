@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 
 import { Confetti } from "@/components/confetti"
+import { HomeLinkAnchor } from "@/components/home-link"
 import { istanbulShort } from "@/lib/istanbul"
 import { recordResult } from "@/lib/stats"
 import {
@@ -202,9 +203,7 @@ export function Game({ initial }: { initial: PublicState }) {
   return (
     <div className={showEnd ? "play done" : "play"}>
       <header className="bar">
-        <a className="back" href="/">
-          Panel
-        </a>
+        <HomeLinkAnchor />
         <h1>{harf} harfli kelime</h1>
         <time className="when" dateTime={date}>
           {istanbulShort(date)}

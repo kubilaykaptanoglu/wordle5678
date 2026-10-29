@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 
+import { DayMark } from "@/components/day-mark"
 import { Legend } from "@/components/legend"
 import { StatsStrip } from "@/components/stats-strip"
 import { Today } from "@/components/today"
@@ -45,6 +46,7 @@ export default function HomePage() {
               href={`/oyun/${mode.harf}`}
               aria-label={`${mode.harf} harfli oyunu aç, ${mode.label} kelime`}
             >
+              <DayMark harf={mode.harf} />
               <span className="num">{mode.harf}</span>
               <span>
                 harf
