@@ -47,6 +47,10 @@ export default async function AnswersPage({ searchParams }: Props) {
 
   return (
     <main className="page">
+      <a className="home-link" href="/">
+        <span aria-hidden="true">←</span>
+        Ana ekrana dön
+      </a>
       <p className="kicker">Kelime5678</p>
       <h1>Geçmiş cevaplar</h1>
       <p className="lede">

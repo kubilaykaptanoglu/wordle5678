@@ -240,6 +240,29 @@ h1 {
 .site-foot a { text-decoration: none; border-bottom: 1px solid var(--ink); }
 .foot-note { color: var(--muted); margin-right: auto; }
 
+.home-link {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  margin: -0.35rem -1rem 0.15rem;
+  padding: 0.45rem 1rem 0.55rem;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 12px 0 var(--paper);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.home-link span {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
 .lengths {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
