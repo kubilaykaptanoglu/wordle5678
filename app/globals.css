@@ -429,7 +429,6 @@ h1 {
 
 .kb { display: flex; flex-direction: column; gap: 0.32rem; }
 .kb-row { display: flex; gap: 0.28rem; }
-.kb-row.mid { padding-inline: 0.45rem; }
 
 .key {
   flex: 1 1 0;
@@ -446,7 +445,7 @@ h1 {
 }
 
 .key:active { transform: translateY(1px); }
-.key.wide { flex: 1.55 1 0; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.key.wide { flex: 1.65 1 0; font-size: 0.72rem; letter-spacing: 0.02em; text-transform: uppercase; }
 .key.enter.ready { background: var(--ink); color: var(--paper); }
 .key.correct { background: var(--ok); color: var(--ok-ink); }
 .key.present { background: var(--mid); color: var(--mid-ink); }

@@ -24,7 +24,7 @@ export function trUpper(value: string): string {
 }
 
 export const KEY_ROWS = [
-  ["q", "w", "e", "r", "t", "y", "u", "ı", "o", "p", "ğ", "ü"],
+  ["e", "r", "t", "y", "u", "ı", "o", "p", "ğ", "ü"],
   ["a", "s", "d", "f", "g", "h", "j", "k", "l", "ş", "i"],
-  ["z", "x", "c", "v", "b", "n", "m", "ö", "ç"],
+  ["z", "c", "v", "b", "n", "m", "ö", "ç"],
 ] as const

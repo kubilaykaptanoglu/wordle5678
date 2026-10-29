@@ -247,8 +247,8 @@ export function Game({ initial }: { initial: PublicState }) {
 
       {status === "playing" ? (
         <div className="kb" aria-label="Türkçe klavye">
-          {KEY_ROWS.slice(0, 2).map((row, rowIndex) => (
-            <div className={rowIndex === 1 ? "kb-row mid" : "kb-row"} key={row.join("")}>
+          {KEY_ROWS.slice(0, 2).map((row) => (
+            <div className="kb-row" key={row.join("")}>
               {row.map((key) => (
                 <button
                   key={key}
@@ -264,8 +264,14 @@ export function Game({ initial }: { initial: PublicState }) {
             </div>
           ))}
           <div className="kb-row">
-            <button type="button" className="key wide" onClick={erase} disabled={busy} aria-label="Sil">
-              Sil
+            <button
+              type="button"
+              className={Array.from(current).length === harf ? "key wide enter ready" : "key wide enter"}
+              onClick={() => void submit()}
+              disabled={busy}
+              aria-label="Gir"
+            >
+              Gir
             </button>
             {KEY_ROWS[2].map((key) => (
               <button
@@ -279,14 +285,8 @@ export function Game({ initial }: { initial: PublicState }) {
                 {trUpper(key)}
               </button>
             ))}
-            <button
-              type="button"
-              className={Array.from(current).length === harf ? "key wide enter ready" : "key wide enter"}
-              onClick={() => void submit()}
-              disabled={busy}
-              aria-label="Gir"
-            >
-              Gir
+            <button type="button" className="key wide" onClick={erase} disabled={busy} aria-label="Sil">
+              Sil
             </button>
           </div>
         </div>
