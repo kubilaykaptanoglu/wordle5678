@@ -1,22 +1,9 @@
 import type { Metadata, Viewport } from "next"
-import { Newsreader, Source_Sans_3 } from "next/font/google"
 
+import { fontClass } from "@/app/fonts"
 import { siteUrl } from "@/lib/site"
 
 import "./globals.css"
-
-const display = Newsreader({
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  variable: "--font-display",
-  style: ["normal", "italic"],
-})
-
-const sans = Source_Sans_3({
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  variable: "--font-sans",
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
@@ -69,7 +56,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr" className={`${display.variable} ${sans.variable}`}>
+    <html lang="tr" className={fontClass}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <a className="skip" href="#icerik">

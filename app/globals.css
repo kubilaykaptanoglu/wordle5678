@@ -12,8 +12,8 @@
   --mid-ink: #1c1712;
   --no: #5c574f;
   --no-ink: #f7f4ee;
-  --sans: var(--font-sans), "Source Sans 3", sans-serif;
-  --display: var(--font-display), Georgia, serif;
+  --sans: var(--font-sans-ext), var(--font-sans), "Source Sans 3", sans-serif;
+  --display: var(--font-display-ext), var(--font-display), Georgia, serif;
   color-scheme: light;
 }
 
