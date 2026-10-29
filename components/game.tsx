@@ -7,6 +7,7 @@ import { HomeLinkAnchor } from "@/components/home-link"
 import { istanbulShort } from "@/lib/istanbul"
 import { recordResult } from "@/lib/stats"
 import {
+  LENGTHS,
   MAX_GUESSES,
   type GameError,
   type LetterLength,
@@ -191,6 +192,9 @@ export function Game({ initial }: { initial: PublicState }) {
   }
 
   const keys = keyColors(guesses)
+  const lengthIndex = LENGTHS.indexOf(harf)
+  const previousLength = LENGTHS[lengthIndex - 1]
+  const nextLength = LENGTHS[lengthIndex + 1]
   const rows = Array.from({ length: MAX_GUESSES }, (_, row) => {
     const guess = guesses[row]
     if (guess) return { letters: Array.from(guess.word), marks: guess.marks, pending: false }
@@ -303,6 +307,18 @@ export function Game({ initial }: { initial: PublicState }) {
           <a className="end-link" href={`/cevaplar?harf=${harf}`}>
             Tüm cevaplar
           </a>
+          <nav className="end-nav" aria-label="Komşu oyunlar">
+            {previousLength ? (
+              <a href={`/oyun/${previousLength}`}>← {previousLength} harfli</a>
+            ) : (
+              <span />
+            )}
+            {nextLength ? (
+              <a href={`/oyun/${nextLength}`}>{nextLength} harfli →</a>
+            ) : (
+              <span />
+            )}
+          </nav>
         </section>
       ) : null}
     </div>

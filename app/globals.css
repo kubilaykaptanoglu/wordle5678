@@ -524,6 +524,27 @@ h1 {
 
 .end-note { margin: 0; font-size: 1.15rem; }
 
+.end-nav {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.end-nav a {
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.7rem;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.end-nav a:first-child { justify-content: flex-start; }
+.end-nav a:last-child { justify-content: flex-end; }
+
 .end-link {
   margin-top: 0.4rem;
   min-height: 3rem;
